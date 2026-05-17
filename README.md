@@ -13,7 +13,7 @@ A high-performance gender detection system combining **YOLO face detection**, **
 
 ## 🎬 Demo Video
 
-🎥 **[Watch the Live Demo](https://drive.google.com/file/d/1VI4dvORVyvUvj8AMzr9VBfGbbX7XR_Vn/view?usp=sharing)** - See the system in action with real-time gender classification!
+🎥 **[Watch the Live Demo](https://drive.google.com/file/d/1VI4dvORVyvUvj8AMzr9VBfGb)** - See the system in action with real-time gender classification!
 
 ---
 
