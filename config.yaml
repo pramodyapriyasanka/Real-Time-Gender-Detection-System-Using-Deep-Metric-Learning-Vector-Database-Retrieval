@@ -1,0 +1,46 @@
+# Gender Detection System Configuration
+
+# Face Detection Settings
+face_detection:
+  confidence_threshold: 0.8  # Minimum confidence for face detection (0.0-1.0)
+  
+# Gender Classification Settings
+gender_classification:
+  # Probability thresholds for classification
+  male_threshold: 0.7        # Minimum probability to classify as Male (0.0-1.0)
+  female_threshold: 0.7      # Minimum probability to classify as Female (0.0-1.0)
+  
+  # k-NN settings for FAISS
+  k_neighbors: 5             # Number of nearest neighbors to consider
+  
+  # Ensemble settings
+  use_ensemble: true         # Use both FAISS and MLP models
+  faiss_weight: 0.5          # Weight for FAISS predictions (0.0-1.0)
+  mlp_weight: 0.5            # Weight for MLP predictions (0.0-1.0)
+
+# Model Paths
+models:
+  yolo_model: "Pre-Train Models/yolov11l-face.pt"
+  arcface_model: "Pre-Train Models/models/buffalo_l/w600k_r50.onnx"
+  faiss_index: "embeddings/face_embeddings.index"
+  metadata: "embeddings/metadata.pkl"
+  mlp_model: "models/mlp_gender_model.pth"
+
+# Video Settings
+video:
+  camera_id: 0               # Webcam ID (0 for default camera)
+  resolution_width: 1280     # Video capture width
+  resolution_height: 720     # Video capture height
+
+# Display Settings
+display:
+  show_confidence: true      # Show confidence percentage
+  show_detailed_info: true   # Show FAISS/MLP breakdown in ensemble mode
+  box_thickness: 2           # Bounding box thickness
+  font_scale: 0.6            # Font size for labels
+  
+# Colors (BGR format)
+colors:
+  female: [255, 0, 255]      # Magenta for Female
+  male: [255, 255, 0]        # Cyan for Male
+  unknown: [128, 128, 128]   # Gray for Unknown
